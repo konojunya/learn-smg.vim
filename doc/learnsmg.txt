@@ -1,0 +1,114 @@
+*learnsmg.txt*	a summary
+
+Version : 0.0.1
+konojunya <me@konojunya>
+License : MIT license  {{{
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+}}}
+
+==============================================================================
+CONTENTS					*learnsmg-contents*
+
+INTRODUCTION			|learnsmg-introduction|
+USAGE				|learnsmg-usage|
+INTERFACE			|learnsmg-interface|
+  VARIABLES			  |learnsmg-variables|
+  COMMANDS			  |learnsmg-commands|
+  KEY-MAPPINGS			  |learnsmg-key-mappings|
+  FUNCTIONS			  |learnsmg-functions|
+
+
+==============================================================================
+INTRODUCTION					*learnsmg-introduction*
+
+*learn-smg* is Vim plugin to learn how to manage sessions.
+
+Latest version:
+https://github.com/konojunya/learn-smg.vim
+
+
+==============================================================================
+USAGE						*learnsmg-usage*
+
+
+
+==============================================================================
+INTERFACE					*learnsmg-interface*
+
+------------------------------------------------------------------------------
+VARIABLES					*learnsmg-variables*
+
+g:learn_smg_session_path			*g:learn_smg_session_path*
+Set the file path to save the session.
+
+------------------------------------------------------------------------------
+COMMANDS					*learnsmg-commands*
+
+:LearnSMGSessionList				*:LearnSMGSessionList*
+Open the session list. Enter to load the session on the cursor
+
+:LearnSMGSessionCreate {name}			*:LearnSMGSessionCreate*
+Save session as {name}
+
+------------------------------------------------------------------------------
+KEY-MAPPINGS					*learnsmg-key-mappings*
+
+<Plug>(session-close)				*<Plug>(session-close)*
+	buffer local mapping
+	available mode: normal
+	default mapping (buffer local):
+		normal:	q
+
+
+<Plug>(session-open)				*<Plug>(session-open)*
+	buffer local mapping
+	available mode: normal
+	default mapping (buffer local):
+		normal:	<CR>
+
+
+						*learnsmg-default-key-mappings*
+
+local default mappings
+normal mode
+{lhs}		{rhs}
+--------	------------------------
+<CR>		<Plug>(session-open)
+q		<Plug>(session-close)
+
+<CR>
+Loads the session under the cursor.
+
+q
+Close the session list buffer.
+
+------------------------------------------------------------------------------
+FUNCTIONS					*learnsmg-functions*
+
+learnsmg#create_session({file})			*learnsmg#create_session()*
+
+
+learnsmg#load_session({file})			*learnsmg#load_session()*
+
+
+learnsmg#sessions()				*learnsmg#sessions()*
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:
